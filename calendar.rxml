@@ -1,0 +1,87 @@
+class Event
+	@@num.events = 0
+
+	def initialize (name, date, location)
+		@name = name
+		@date = date
+		@location = location
+		@@num.events += 1
+	end
+
+	def show (index)
+		puts "name: #{@name}"
+		puts "date: #{@date}"
+		puts "location: #{@location}"
+	end
+
+
+def start_calendar()
+	calendar = []
+
+	quit = false
+
+	while !quit
+
+		puts "Welcome to your calendar! \n Choose one of the following options"
+		puts "1. Add an event"
+		puts "2. Show an event"
+		puts "3. Delete an event"
+		puts "4. Get the total number of events"
+		puts "5. Show all the events"
+		puts "6. Exit this program"
+
+		selected = gets.chomp.to_i
+
+		if(selected == 1)
+			add_event(calendar)
+		elsif(selected ==2)
+
+		elsif(selected ==3)
+
+		elsif(selected ==4)
+
+		elsif(selected ==5)
+
+		elsif(selected ==6)
+
+		else 
+			puts "invalid input"
+		end
+	end
+end
+end
+
+def add_event(calendar)
+	puts "What's the event named?"
+	name = gets.chomp.capitalize!
+	
+	puts = "what's the event's month?"
+	month = gets.chomp.to_i
+	
+	puts "what's the event day?"
+	day = gets.chomp.to_i
+	
+	puts "What's the event year?"
+	year = gets.comp.to_i
+	
+	if (month > 12 || month < 1)
+		puts "Month should be between 1 and 12"
+	elsif (day < 1 || day > 31)
+		puts "Month should be between 1 and 31"
+	elsif (year < 2014)
+		puts "Year should be after 2014"
+	end
+	
+	puts "Where's this event going down?"
+	location = gets.chomp.capitalize!
+	date = year + "." + month +"." + day
+
+	event = Event.new(name, date, location)
+	calendar.push(event)
+	return calendar
+end
+
+
+begin
+	call start_tasklister method()
+end
